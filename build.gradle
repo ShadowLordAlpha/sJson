@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+dependencies {
+	testCompile "junit:junit:4.11"
+}
+
+jar {
+	baseName = 'SJSON'
+	version = '0.1.0'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.12'
+}
